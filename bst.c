@@ -260,8 +260,8 @@ void insert(int input, struct node* tree)
 int main()
 {
     struct node* tree = makeTree();
-    int smallest = findSmallest(tree);
-    int largest  = findLargest(tree);
+    int smallest      = findSmallest(tree);
+    int largest       = findLargest(tree);
     printf("The smallest value in the tree is %d\n", smallest);
     printf("The largest value in the tree is %d\n", largest);
 

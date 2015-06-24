@@ -8,7 +8,8 @@ struct node {
 
 /*
  * initializeList :: () -> node*
- * Creates a linked list of three nodes and returns a pointer to the head of the list
+ * Creates a linked list of three nodes and * returns a pointer to the head of
+ * the list
 */
 struct node* initializeList()
 {
@@ -29,7 +30,7 @@ struct node* initializeList()
 
 /*
  * printList :: node* -> IO
- * Takes a pointer to a linked list and prints out the entire list
+ * Takes a pointer to a linked list and prints out * the entire list
 */
 void printList(struct node* head)
 {
