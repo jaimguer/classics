@@ -12,9 +12,9 @@ void printList(int list[], int length)
 
 void insertionSort(int list[], int length)
 {
-    int j;
     for (int current = 1; current < length; current++)
     {
+        int j;
         int temp = list[current];
         for (j = current; j > 0 && temp < list[j-1]; j--)
         {
