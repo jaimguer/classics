@@ -27,6 +27,17 @@ void swap(int* a, int* b)
     *b = temp;
 }
 
+/*
+ * Primary idea: we want to split the list into two halves, one where the all
+ * the elements are less than the pivot, and one where all the elements are
+ * greater than the pivot.  By the end of partition, there is at least one
+ * element in its proper spot.
+ * To do this, we put aside the pivot value.  We then go through the list,
+ * comparing all values and finding which of those are less than the pivot.
+ * The storeIndex is our ``frontier'', where all values less than it are less
+ * than the pivot.  The final swap at the end puts the pivot into its proper
+ * location relative to the two halves.
+ */
 int partition(int list[], int lowIndex, int highIndex)
 {
     int pivotIndex = lowIndex; // always choose the first element.  This is bad!
@@ -57,13 +68,12 @@ void quicksort(int list[], int lowIndex, int highIndex)
         quicksort(list, lowIndex, pivot - 1);
         quicksort(list, pivot + 1, highIndex);
     }
-
 }
 
 int main()
 {
     int list[] = {4, 65, 2, -31, 0, 99, 2, 83, 782, 1};
-    int length = sizeof(list) / sizeof(int);
+    int length = sizeof(list) / sizeof(list[0]);
 
     printList(list, length);
     quicksort(list, 0, length - 1);
