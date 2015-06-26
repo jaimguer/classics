@@ -7,6 +7,7 @@
  */
 
 #include<stdio.h>
+#define TABLESIZE 541
 /*
  * hash :: Char* -> Nat
  * hash(char* str) hashes str using the CRC algorithm presented in the above
@@ -22,7 +23,7 @@ int hash(char* str)
         int highorder = h & 0xf8000000;
         h = h << 5;
         h = h ^ (highorder >> 27);
-        h = (h ^ *(str + i)) % 541;
+        h = (h ^ *(str + i)) % TABLESIZE;
         str++;
     }
     printf("Hash of string %s: %d\n", temp, h);
@@ -77,9 +78,8 @@ void delete(char* str, char* table[])
 
 int main()
 {
-    int size = 541;
-    char* table[size];
-    for (int i = 0; i < size; i++) { table[i] = NULL; }
+    char* table[TABLESIZE];
+    for (int i = 0; i < TABLESIZE; i++) { table[i] = NULL; }
 
     char* str  = "hello";
     char* str1 = "cat";
@@ -92,18 +92,18 @@ int main()
     char* str8 = "iphone";
     char* str9 = "soma coffee and juice bar";
 
-    insert(str,  table, size);
-    insert(str1, table, size);
-    insert(str2, table, size);
-    insert(str3, table, size);
-    insert(str4, table, size);
-    insert(str5, table, size);
-    insert(str6, table, size);
-    insert(str7, table, size);
-    insert(str8, table, size);
-    insert(str9, table, size);
+    insert(str,  table, TABLESIZE);
+    insert(str1, table, TABLESIZE);
+    insert(str2, table, TABLESIZE);
+    insert(str3, table, TABLESIZE);
+    insert(str4, table, TABLESIZE);
+    insert(str5, table, TABLESIZE);
+    insert(str6, table, TABLESIZE);
+    insert(str7, table, TABLESIZE);
+    insert(str8, table, TABLESIZE);
+    insert(str9, table, TABLESIZE);
     printf("\n");
-    printTable(table, size);
+    printTable(table, TABLESIZE);
 
     return 0;
 
