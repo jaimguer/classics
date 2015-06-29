@@ -7,6 +7,8 @@
  */
 
 #include<stdio.h>
+#include<stdlib.h>
+
 #define TABLESIZE 541
 /*
  * hash :: Char* -> Nat
@@ -105,6 +107,6 @@ int main()
     printf("\n");
     printTable(table, TABLESIZE);
 
-    return 0;
+    exit(0);
 
 }

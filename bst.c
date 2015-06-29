@@ -136,10 +136,12 @@ void preorderPrint(struct node* root)
  */
 void inorderPrint(struct node* root)
 {
-    if(root == NULL) {
+    if(root == NULL)
+    {
         return;
     }
-    else {
+    else
+    {
         inorderPrint(root->left);
         printData(root);
         inorderPrint(root->right);
@@ -154,10 +156,12 @@ void inorderPrint(struct node* root)
  */
 void postorderPrint(struct node* root)
 {
-    if (root == NULL) {
+    if (root == NULL)
+    {
         return;
     }
-    else {
+    else
+    {
         postorderPrint(root->left);
         postorderPrint(root->right);
         printData(root);
@@ -256,6 +260,21 @@ void insert(int input, struct node* tree)
         insert(input, tree->right);
     }
 }
+
+/*void breadthFirstTraversal(struct node* tree)*/
+/*{*/
+    /*if (tree == NULL)*/
+    /*{*/
+        /*return;*/
+    /*}*/
+    /*else*/
+    /*{*/
+        /*printData(tree);*/
+
+    /*}*/
+
+
+/*}*/
 
 int main()
 {
